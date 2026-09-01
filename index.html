@@ -1,0 +1,1752 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Achieva | Insurance Contracting Support for IMOs</title>
+    <meta
+      name="description"
+      content="SureLC-experienced contracting support for Independent Marketing Organizations. Agent onboarding, contract processing, writing number maintenance, and issue-paid reports."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,600&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["DM Sans", "sans-serif"],
+            },
+            colors: {
+              primary: {
+                DEFAULT: "#1b2c42",
+                dark: "#142133",
+                light: "#243750",
+              },
+              accent: {
+                DEFAULT: "#e69a28",
+                hover: "#d48818",
+                light: "#fef7ee",
+              },
+            },
+            animation: {
+              marquee: "marquee 40s linear infinite",
+            },
+            keyframes: {
+              marquee: {
+                "0%": { transform: "translateX(0%)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "DM Sans", sans-serif;
+      }
+      .marquee-mask {
+        mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 8%,
+          black 92%,
+          transparent
+        );
+        -webkit-mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 8%,
+          black 92%,
+          transparent
+        );
+      }
+
+      /* Smooth Scroll & Entrance Animations */
+      .reveal-up {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+          opacity 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+      .reveal-up.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-right {
+        opacity: 0;
+        transform: translateX(65px);
+        transition:
+          opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+      .reveal-right.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .reveal-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition:
+          opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+      .reveal-left.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .delay-100 {
+        transition-delay: 100ms;
+      }
+      .delay-200 {
+        transition-delay: 200ms;
+      }
+      .delay-300 {
+        transition-delay: 300ms;
+      }
+      .delay-400 {
+        transition-delay: 400ms;
+      }
+      .delay-500 {
+        transition-delay: 500ms;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#eef2f6] text-slate-900 antialiased selection:bg-accent selection:text-white relative overflow-x-hidden"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200 shadow-xs transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex items-center justify-between h-20">
+          <a href="#hero" class="flex items-center shrink-0">
+            <img
+              src="assets/LOGO.png"
+              alt="AchieVA"
+              class="h-8 md:h-10 w-auto object-contain"
+            />
+          </a>
+
+          <nav class="hidden md:flex items-center gap-8 text-[15px]">
+            <a
+              href="#about"
+              class="nav-link font-medium text-slate-600 hover:text-slate-900 transition-all pb-1 border-b-2 border-transparent"
+              >About</a
+            >
+            <a
+              href="#services"
+              class="nav-link font-medium text-slate-600 hover:text-slate-900 transition-all pb-1 border-b-2 border-transparent"
+              >Services</a
+            >
+            <a
+              href="#why"
+              class="nav-link font-medium text-slate-600 hover:text-slate-900 transition-all pb-1 border-b-2 border-transparent"
+              >Why Achieva</a
+            >
+            <a
+              href="#testimonials"
+              class="nav-link font-medium text-slate-600 hover:text-slate-900 transition-all pb-1 border-b-2 border-transparent"
+              >Reviews</a
+            >
+            <a
+              href="pricing.html"
+              class="nav-link font-medium text-slate-600 hover:text-slate-900 transition-all pb-1 border-b-2 border-transparent"
+              >Pricing</a
+            >
+            <a
+              href="#contact"
+              class="nav-link font-medium text-slate-600 hover:text-slate-900 transition-all pb-1 border-b-2 border-transparent"
+              >Contact</a
+            >
+          </nav>
+
+          <div class="hidden md:flex items-center">
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-[14px] font-bold bg-accent text-white hover:bg-accent-hover shadow-xs transition-all hover:scale-105"
+            >
+              Let's Talk
+            </a>
+          </div>
+
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+            aria-label="Toggle Menu"
+          >
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-xl"
+      >
+        <a
+          href="#about"
+          class="block text-base font-medium text-slate-700 hover:text-accent mobile-nav-link"
+          >About</a
+        >
+        <a
+          href="#services"
+          class="block text-base font-medium text-slate-700 hover:text-accent mobile-nav-link"
+          >Services</a
+        >
+        <a
+          href="#why"
+          class="block text-base font-medium text-slate-700 hover:text-accent mobile-nav-link"
+          >Why Achieva</a
+        >
+        <a
+          href="#testimonials"
+          class="block text-base font-medium text-slate-700 hover:text-accent mobile-nav-link"
+          >Reviews</a
+        >
+        <a
+          href="pricing.html"
+          class="block text-base font-medium text-slate-700 hover:text-accent"
+          >Pricing</a
+        >
+        <a
+          href="#contact"
+          class="block text-base font-medium text-slate-700 hover:text-accent mobile-nav-link"
+          >Contact</a
+        >
+        <div class="pt-2">
+          <a
+            href="#contact"
+            class="block text-center w-full bg-accent text-white py-3 rounded-xl font-bold shadow-md mobile-nav-link"
+          >
+            Let's Talk
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section
+      id="hero"
+      class="relative min-h-screen flex items-center pt-24 pb-16 lg:pt-28 lg:pb-20 overflow-hidden bg-[#eef2f6]"
+    >
+      <div
+        class="absolute -top-16 -right-16 md:-top-24 md:-right-24 w-[650px] h-[650px] lg:w-[820px] lg:h-[820px] rounded-full pointer-events-none z-0"
+        style="
+          background: radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.95) 0%,
+            rgba(255, 255, 255, 0.55) 45%,
+            rgba(238, 242, 246, 0) 70%
+          );
+        "
+      ></div>
+
+      <div
+        class="absolute -top-20 -right-20 md:-top-28 md:-right-28 w-[440px] h-[440px] sm:w-[520px] sm:h-[520px] lg:w-[620px] lg:h-[620px] rounded-full bg-[#dadee4] pointer-events-none z-0"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-[53%_47%] gap-12 lg:gap-8 items-center"
+        >
+          <div class="max-w-2xl">
+            <div class="flex flex-wrap gap-2.5 mb-8 reveal-up delay-100">
+              <span
+                class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[13px] font-semibold border border-slate-200/90 bg-white text-slate-800 shadow-2xs"
+              >
+                <svg
+                  class="w-3.5 h-3.5 text-accent shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+                SureLC Experienced
+              </span>
+
+              <span
+                class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[13px] font-semibold border border-slate-200/90 bg-white text-slate-800 shadow-2xs"
+              >
+                <svg
+                  class="w-3.5 h-3.5 text-accent shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+                Team-Based Support
+              </span>
+
+              <span
+                class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[13px] font-semibold border border-slate-200/90 bg-white text-slate-800 shadow-2xs"
+              >
+                <svg
+                  class="w-3.5 h-3.5 text-accent shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>
+                IMO-Focused
+              </span>
+            </div>
+
+            <h1
+              class="text-4xl sm:text-5xl lg:text-[56px] xl:text-[62px] font-extrabold leading-[1.08] tracking-[-0.03em] text-[#111827] mb-6 reveal-up delay-200"
+            >
+              Insurance Contracting Support for Independent Marketing
+              Organizations.
+            </h1>
+
+            <p
+              class="text-[17px] text-slate-600 leading-relaxed mb-4 font-normal reveal-up delay-300"
+            >
+              Achieva provides dedicated insurance operations and contracting
+              support designed to keep your agents, contracts, and
+              administrative processes moving.
+            </p>
+
+            <p
+              class="text-[15px] text-slate-500 leading-relaxed mb-9 font-normal reveal-up delay-400"
+            >
+              We work behind the scenes to help IMOs manage the details that can
+              easily become time-consuming — from agent onboarding and contract
+              processing to outstanding requirements, writing numbers, and issue
+              paid monthly reports.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-5 reveal-up delay-500">
+              <a
+                href="#contact"
+                class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-[15px] bg-accent text-white hover:bg-accent-hover shadow-sm transition-all hover:scale-105"
+              >
+                Let's Talk <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="#services"
+                class="inline-flex items-center gap-2 text-[15px] font-semibold text-slate-900 hover:text-accent transition-colors"
+              >
+                See What We Do <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="relative flex justify-center lg:justify-end reveal-right delay-200"
+          >
+            <div class="relative w-full max-w-[480px] lg:max-w-[500px]">
+              <div
+                class="relative rounded-2xl overflow-hidden shadow-[0_25px_60px_-15px_rgba(15,23,42,0.22)] transform rotate-[1.75deg] hover:rotate-0 transition-transform duration-700 ease-out"
+              >
+                <img
+                  alt="Professional team meeting and contracting support"
+                  class="w-full h-[440px] sm:h-[490px] lg:h-[510px] object-cover object-center"
+                  src="assets/hero.png"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="about"
+      class="py-24 bg-white border-t border-slate-200/80 scroll-mt-20"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+        >
+          <div
+            class="relative rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-100 reveal-left delay-100"
+          >
+            <img
+              src="assets/aboutUs.png"
+              alt="Achieva team"
+              class="w-full h-[420px] sm:h-[480px] lg:h-[520px] object-cover object-center"
+            />
+          </div>
+
+          <div class="max-w-xl reveal-up delay-200">
+            <span
+              class="text-accent font-bold tracking-wider text-xs uppercase block mb-2"
+            >
+              ABOUT US
+            </span>
+            <h2
+              class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#111827] tracking-tight mb-6"
+            >
+              Who We Are
+            </h2>
+
+            <div
+              class="space-y-5 text-[14px] sm:text-[15px] text-slate-600 leading-relaxed font-normal"
+            >
+              <p>
+                Achieva is a dedicated insurance contracting support team built
+                specifically for Independent Marketing Organizations. We
+                specialize in the operational side of insurance — agent
+                onboarding, contract processing, SureLC management, writing
+                number maintenance, and issue paid reporting — so your team can
+                focus on growth instead of paperwork.
+              </p>
+              <p>
+                We were built around one simple idea: IMOs shouldn't have to
+                slow down because of administrative bottlenecks. Contracting is
+                detail-heavy, deadline-driven, and easy to fall behind on.
+                Achieva exists to make sure that never happens on your watch.
+                Our team steps in as a seamless extension of your operations —
+                learning your processes, working within your systems, and
+                delivering consistent output you can count on.
+              </p>
+              <p>
+                Our team brings hands-on experience in IMO workflows and carrier
+                coordination, meaning we understand the work from day one. We
+                don't need a long ramp-up period or constant supervision. We
+                come in ready to handle the details — tracking outstanding
+                requirements, managing SureLC submissions, maintaining writing
+                number records, and compiling monthly reports — so nothing slips
+                through the cracks.
+              </p>
+              <p>
+                At Achieva, we take pride in being reliable, organized, and easy
+                to work with. We believe that great back-office support should
+                be invisible — you shouldn't have to think about it because it
+                just works. That's the standard we hold ourselves to every day.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="services"
+      class="py-24 bg-[#f8fafc] border-t border-slate-200/80 scroll-mt-20"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="max-w-3xl mx-auto text-center mb-16 reveal-up">
+          <span
+            class="text-accent font-bold tracking-wider text-xs uppercase block mb-2"
+            >SERVICES</span
+          >
+          <h2
+            class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#111827] tracking-tight"
+          >
+            What Can We Do for You?
+          </h2>
+          <p class="mt-4 text-slate-600 text-base sm:text-lg">
+            End-to-end contracting support — from agent onboarding to issued
+            policy.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col items-start reveal-up delay-100"
+          >
+            <div
+              class="w-11 h-11 rounded-xl bg-[#18293d] text-white flex items-center justify-center mb-6 shrink-0"
+            >
+              <i data-lucide="user-plus" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#111827] mb-3">
+              Agent Onboarding
+            </h3>
+            <p class="text-[14px] text-slate-600 leading-relaxed">
+              We help coordinate the onboarding process by organizing
+              requirements, tracking necessary information, and helping new
+              agents transition smoothly into the contracting process.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col items-start reveal-up delay-200"
+          >
+            <div
+              class="w-11 h-11 rounded-xl bg-[#18293d] text-white flex items-center justify-center mb-6 shrink-0"
+            >
+              <i data-lucide="file-text" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#111827] mb-3">
+              Contract Processing
+            </h3>
+            <p class="text-[14px] text-slate-600 leading-relaxed">
+              We manage the end-to-end contract submission process — preparing
+              paperwork, submitting to carriers, and tracking status so nothing
+              falls through the cracks.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col items-start reveal-up delay-300"
+          >
+            <div
+              class="w-11 h-11 rounded-xl bg-[#18293d] text-white flex items-center justify-center mb-6 shrink-0"
+            >
+              <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#111827] mb-3">
+              SureLC Management
+            </h3>
+            <p class="text-[14px] text-slate-600 leading-relaxed">
+              We handle SureLC submissions and follow-ups on your behalf,
+              keeping agent contracting requests organized and moving forward
+              without delays.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col items-start reveal-up delay-100"
+          >
+            <div
+              class="w-11 h-11 rounded-xl bg-[#18293d] text-white flex items-center justify-center mb-6 shrink-0"
+            >
+              <i data-lucide="file-text" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#111827] mb-3">
+              Outstanding Requirements
+            </h3>
+            <p class="text-[14px] text-slate-600 leading-relaxed">
+              We track and follow up on missing or pending requirements so
+              contracts don't stall — keeping your agents and carriers informed
+              at every step.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col items-start reveal-up delay-200"
+          >
+            <div
+              class="w-11 h-11 rounded-xl bg-[#18293d] text-white flex items-center justify-center mb-6 shrink-0"
+            >
+              <i data-lucide="hash" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#111827] mb-3">
+              Writing Number Maintenance
+            </h3>
+            <p class="text-[14px] text-slate-600 leading-relaxed">
+              We maintain accurate writing number records across carriers,
+              ensuring agents have the correct identifiers needed to submit
+              business without interruption.
+            </p>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white hover:shadow-lg transition-all duration-300 flex flex-col items-start reveal-up delay-300"
+          >
+            <div
+              class="w-11 h-11 rounded-xl bg-[#18293d] text-white flex items-center justify-center mb-6 shrink-0"
+            >
+              <i data-lucide="bar-chart-2" class="w-5 h-5"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#111827] mb-3">
+              Issue Paid Monthly Reports
+            </h3>
+            <p class="text-[14px] text-slate-600 leading-relaxed">
+              We compile and deliver monthly issue paid reports so your team has
+              a clear, up-to-date picture of contracted agents and active
+              production status.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="why"
+      class="py-24 bg-white border-t border-slate-200/80 scroll-mt-20"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-end mb-16 reveal-up"
+        >
+          <div>
+            <h2
+              class="text-3xl sm:text-4xl lg:text-[44px] font-extrabold text-[#111827] leading-[1.12] tracking-tight"
+            >
+              Operational Support<br class="hidden sm:inline" />
+              That Understands the<br class="hidden sm:inline" />
+              IMO Workflow
+            </h2>
+          </div>
+          <div>
+            <p
+              class="text-slate-600 text-base sm:text-lg leading-relaxed lg:max-w-md"
+            >
+              With hands-on experience in insurance contracting, we help IMOs
+              reduce delays and keep processes running smoothly.
+            </p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div
+            class="rounded-2xl border border-slate-200 bg-[#f8fafc] overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col reveal-up delay-100"
+          >
+            <div class="h-60 sm:h-64 w-full overflow-hidden bg-slate-100">
+              <img
+                src="assets/sureLC.png"
+                alt="SureLC interface"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div class="p-8 flex-1 flex flex-col justify-start">
+              <div class="flex items-center gap-2 mb-3">
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-accent shrink-0"
+                ></span>
+                <h3 class="text-lg font-bold text-[#111827]">
+                  SureLC Experience
+                </h3>
+              </div>
+              <p class="text-[14px] text-slate-600 leading-relaxed">
+                Our team has hands-on experience working with SureLC for
+                insurance contracting, allowing us to efficiently manage
+                applications, track requirements, and navigate the platform with
+                confidence.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="rounded-2xl border border-slate-200 bg-[#f8fafc] overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col reveal-up delay-200"
+          >
+            <div class="h-60 sm:h-64 w-full overflow-hidden bg-slate-100">
+              <img
+                src="assets/familiarity.png"
+                alt="Industry collaboration"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div class="p-8 flex-1 flex flex-col justify-start">
+              <div class="flex items-center gap-2 mb-3">
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-accent shrink-0"
+                ></span>
+                <h3 class="text-lg font-bold text-[#111827]">
+                  Industry Familiarity
+                </h3>
+              </div>
+              <p class="text-[14px] text-slate-600 leading-relaxed">
+                Achieva isn't starting from scratch. We understand the insurance
+                contracting environment and the workflow behind it. You don't
+                need to spend time explaining how IMO contracting works.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="rounded-2xl border border-slate-200 bg-[#f8fafc] overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col reveal-up delay-300"
+          >
+            <div class="h-60 sm:h-64 w-full overflow-hidden bg-slate-100">
+              <img
+                src="assets/operational.png"
+                alt="Operational workflow"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div class="p-8 flex-1 flex flex-col justify-start">
+              <div class="flex items-center gap-2 mb-3">
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-accent shrink-0"
+                ></span>
+                <h3 class="text-lg font-bold text-[#111827]">
+                  Operational Understanding
+                </h3>
+              </div>
+              <p class="text-[14px] text-slate-600 leading-relaxed">
+                We understand how onboarding, contract processing, requirements,
+                writing numbers, and reporting fit together as part of the
+                larger operational workflow.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="rounded-2xl border border-slate-200 bg-[#f8fafc] overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col reveal-up delay-400"
+          >
+            <div class="h-60 sm:h-64 w-full overflow-hidden bg-slate-100">
+              <img
+                src="assets/team.png"
+                alt="Team support"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div class="p-8 flex-1 flex flex-col justify-start">
+              <div class="flex items-center gap-2 mb-3">
+                <span
+                  class="w-2.5 h-2.5 rounded-full bg-accent shrink-0"
+                ></span>
+                <h3 class="text-lg font-bold text-[#111827]">
+                  Team-Based Support
+                </h3>
+              </div>
+              <p class="text-[14px] text-slate-600 leading-relaxed">
+                Our team approach allows multiple trained professionals to work
+                within your established processes, providing greater capacity
+                and continuity as your contracting workload changes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="stats"
+      class="py-20 bg-primary text-white border-y border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          <div class="reveal-up delay-100">
+            <div
+              class="text-5xl sm:text-6xl lg:text-[70px] font-black text-accent tracking-tight leading-none"
+            >
+              5+
+            </div>
+            <p
+              class="text-slate-300 text-sm sm:text-[15px] font-medium mt-3 tracking-wide"
+            >
+              Years of Insurance Contracting Experience
+            </p>
+          </div>
+
+          <div class="reveal-up delay-200">
+            <div
+              class="text-5xl sm:text-6xl lg:text-[70px] font-black text-accent tracking-tight leading-none"
+            >
+              100,000+
+            </div>
+            <p
+              class="text-slate-300 text-sm sm:text-[15px] font-medium mt-3 tracking-wide"
+            >
+              Contracts Processed
+            </p>
+          </div>
+
+          <div class="reveal-up delay-300">
+            <div
+              class="text-5xl sm:text-6xl lg:text-[70px] font-black text-accent tracking-tight leading-none"
+            >
+              3,000+
+            </div>
+            <p
+              class="text-slate-300 text-sm sm:text-[15px] font-medium mt-3 tracking-wide"
+            >
+              Agents Supported
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="testimonials"
+      class="py-24 bg-[#f8fafc] border-t border-slate-200/80 scroll-mt-20"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="max-w-3xl mx-auto text-center mb-16 reveal-up">
+          <span
+            class="text-accent font-bold tracking-wider text-xs uppercase block mb-2"
+          >
+            TESTIMONIALS
+          </span>
+          <h2
+            class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#111827] tracking-tight"
+          >
+            What IMO Leaders Are Saying
+          </h2>
+          <p class="mt-4 text-slate-600 text-base sm:text-lg">
+            From independent agents to executive directors — here's how Achieva
+            has made a difference.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white shadow-xs flex flex-col justify-between hover:shadow-md transition-all duration-300 reveal-up delay-100"
+          >
+            <div>
+              <div class="flex items-center gap-1 text-accent mb-6 text-base">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <p
+                class="text-[14px] text-slate-600 leading-relaxed mb-6 font-normal"
+              >
+                "Achieva took over our entire contracting pipeline and within
+                two weeks we saw a dramatic drop in processing delays. Our
+                agents stopped calling us about missing writing numbers because
+                everything was just getting done."
+              </p>
+            </div>
+            <div
+              class="pt-5 border-t border-slate-100 flex items-center gap-3.5"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-[#18293d] text-white flex items-center justify-center font-bold text-sm shrink-0"
+              >
+                M
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-[#111827]">Marcus T.</h4>
+                <p class="text-xs text-slate-500 font-medium">
+                  Managing Director
+                </p>
+                <p class="text-xs text-accent font-semibold">
+                  Independent Marketing Organization
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white shadow-xs flex flex-col justify-between hover:shadow-md transition-all duration-300 reveal-up delay-200"
+          >
+            <div>
+              <div class="flex items-center gap-1 text-accent mb-6 text-base">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <p
+                class="text-[14px] text-slate-600 leading-relaxed mb-6 font-normal"
+              >
+                "As an independent agent, I was always chasing my upline for
+                contract status updates. Since my IMO brought Achieva on board,
+                I get timely updates and my contracts move through without the
+                usual back-and-forth."
+              </p>
+            </div>
+            <div
+              class="pt-5 border-t border-slate-100 flex items-center gap-3.5"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-[#18293d] text-white flex items-center justify-center font-bold text-sm shrink-0"
+              >
+                R
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-[#111827]">Renee A.</h4>
+                <p class="text-xs text-slate-500 font-medium">
+                  Independent Insurance Agent
+                </p>
+                <p class="text-xs text-accent font-semibold">
+                  Life & Annuity Producer
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white shadow-xs flex flex-col justify-between hover:shadow-md transition-all duration-300 reveal-up delay-300"
+          >
+            <div>
+              <div class="flex items-center gap-1 text-accent mb-6 text-base">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <p
+                class="text-[14px] text-slate-600 leading-relaxed mb-6 font-normal"
+              >
+                "We were drowning in SureLC submissions and outstanding
+                requirements. Achieva stepped in, learned our workflow fast, and
+                now our contracting backlog is practically nonexistent. It's
+                been a game changer for our operations team."
+              </p>
+            </div>
+            <div
+              class="pt-5 border-t border-slate-100 flex items-center gap-3.5"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-[#18293d] text-white flex items-center justify-center font-bold text-sm shrink-0"
+              >
+                D
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-[#111827]">David L.</h4>
+                <p class="text-xs text-slate-500 font-medium">
+                  VP of Operations
+                </p>
+                <p class="text-xs text-accent font-semibold">Regional IMO</p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white shadow-xs flex flex-col justify-between hover:shadow-md transition-all duration-300 reveal-up delay-100"
+          >
+            <div>
+              <div class="flex items-center gap-1 text-accent mb-6 text-base">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <p
+                class="text-[14px] text-slate-600 leading-relaxed mb-6 font-normal"
+              >
+                "What impressed me most was how quickly they got up to speed. No
+                long onboarding, no hand-holding. They understood IMO
+                contracting from day one and just got to work."
+              </p>
+            </div>
+            <div
+              class="pt-5 border-t border-slate-100 flex items-center gap-3.5"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-[#18293d] text-white flex items-center justify-center font-bold text-sm shrink-0"
+              >
+                S
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-[#111827]">Sandra M.</h4>
+                <p class="text-xs text-slate-500 font-medium">Agency Owner</p>
+                <p class="text-xs text-accent font-semibold">
+                  Insurance Agency Group
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white shadow-xs flex flex-col justify-between hover:shadow-md transition-all duration-300 reveal-up delay-200"
+          >
+            <div>
+              <div class="flex items-center gap-1 text-accent mb-6 text-base">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <p
+                class="text-[14px] text-slate-600 leading-relaxed mb-6 font-normal"
+              >
+                "Our monthly issue paid reports used to take days to compile.
+                Achieva handles it cleanly and on time every month. That alone
+                has saved us hours of internal work."
+              </p>
+            </div>
+            <div
+              class="pt-5 border-t border-slate-100 flex items-center gap-3.5"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-[#18293d] text-white flex items-center justify-center font-bold text-sm shrink-0"
+              >
+                J
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-[#111827]">James R.</h4>
+                <p class="text-xs text-slate-500 font-medium">
+                  Executive Director
+                </p>
+                <p class="text-xs text-accent font-semibold">
+                  National Distribution Organization
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="p-8 rounded-2xl border border-slate-200 bg-white shadow-xs flex flex-col justify-between hover:shadow-md transition-all duration-300 reveal-up delay-300"
+          >
+            <div>
+              <div class="flex items-center gap-1 text-accent mb-6 text-base">
+                <span>★</span><span>★</span><span>★</span><span>★</span
+                ><span>★</span>
+              </div>
+              <p
+                class="text-[14px] text-slate-600 leading-relaxed mb-6 font-normal"
+              >
+                "I've worked with offshore support teams before and the
+                experience was frustrating. Achieva is different — they're
+                organized, responsive, and they actually understand the
+                insurance contracting process."
+              </p>
+            </div>
+            <div
+              class="pt-5 border-t border-slate-100 flex items-center gap-3.5"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-[#18293d] text-white flex items-center justify-center font-bold text-sm shrink-0"
+              >
+                P
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-[#111827]">Patricia C.</h4>
+                <p class="text-xs text-slate-500 font-medium">
+                  Director of Agent Services
+                </p>
+                <p class="text-xs text-accent font-semibold">IMO Network</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="carriers"
+      class="py-16 bg-white border-t border-slate-200/80 overflow-hidden reveal-up"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center mb-10">
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500">
+          CARRIERS WE WORK WITH
+        </h3>
+      </div>
+
+      <div class="relative w-full overflow-hidden marquee-mask">
+        <div
+          class="flex items-center gap-5 w-max animate-marquee hover:[animation-play-state:paused]"
+        >
+          <div class="flex items-center gap-5 shrink-0">
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0 hover:border-accent/40 transition-colors"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/corebridge.svg"
+                alt="AIG / Corebridge"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >AIG / Corebridge</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0 hover:border-accent/40 transition-colors"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/trinity.png"
+                alt="Trinity Life"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Trinity Life</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0 hover:border-accent/40 transition-colors"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/transamerica.svg"
+                alt="Transamerica"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Transamerica</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0 hover:border-accent/40 transition-colors"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/americo.png"
+                alt="Americo"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Americo</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0 hover:border-accent/40 transition-colors"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/royalneighbors.png"
+                alt="Royal Neighbors"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Royal Neighbors</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0 hover:border-accent/40 transition-colors"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/mutualofomaha.png"
+                alt="Mutual of Omaha"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Mutual of Omaha</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0 hover:border-accent/40 transition-colors"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/gerber.png"
+                alt="Gerber Life"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Gerber Life</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0 hover:border-accent/40 transition-colors"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/foresters.png"
+                alt="Foresters"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Foresters</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0 hover:border-accent/40 transition-colors"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/americanamicable.png"
+                alt="American Amicable"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >American Amicable</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0 hover:border-accent/40 transition-colors"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/sbli.png"
+                alt="SBLI"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden">SBLI</span>
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0 hover:border-accent/40 transition-colors"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/gtl.png"
+                alt="GTL"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden">GTL</span>
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0 hover:border-accent/40 transition-colors"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/libertybankers.png"
+                alt="Liberty Bankers"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Liberty Bankers</span
+              >
+            </div>
+          </div>
+
+          <div class="flex items-center gap-5 shrink-0" aria-hidden="true">
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/corebridge.svg"
+                alt="AIG / Corebridge"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >AIG / Corebridge</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/trinity.png"
+                alt="Trinity Life"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Trinity Life</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/transamerica.svg"
+                alt="Transamerica"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Transamerica</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/americo.png"
+                alt="Americo"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Americo</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/royalneighbors.png"
+                alt="Royal Neighbors"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Royal Neighbors</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/mutualofomaha.png"
+                alt="Mutual of Omaha"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Mutual of Omaha</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/gerber.png"
+                alt="Gerber Life"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Gerber Life</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/foresters.png"
+                alt="Foresters"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Foresters</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/americanamicable.png"
+                alt="American Amicable"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >American Amicable</span
+              >
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/sbli.png"
+                alt="SBLI"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden">SBLI</span>
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/gtl.png"
+                alt="GTL"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden">GTL</span>
+            </div>
+
+            <div
+              class="h-14 px-7 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0"
+              style="width: 160px; height: 80px; padding: 12px 16px"
+            >
+              <img
+                src="assets/carriers/libertybankers.png"
+                alt="Liberty Bankers"
+                class="h-full w-full object-contain max-h-[44px] max-w-[144px] block"
+                onerror="
+                  this.style.display = 'none';
+                  this.nextElementSibling.style.display = 'block';
+                "
+              />
+              <span class="text-sm font-bold text-slate-700 hidden"
+                >Liberty Bankers</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="py-24 bg-primary text-white border-t border-slate-800 scroll-mt-20"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-start"
+        >
+          <div class="pt-4 max-w-lg reveal-up delay-100">
+            <h2
+              class="text-3xl sm:text-4xl lg:text-[46px] font-extrabold leading-[1.12] tracking-tight text-white mb-6"
+            >
+              Ready to Take Contracting Off Your Plate?
+            </h2>
+            <p
+              class="text-slate-300 text-[16px] sm:text-[17px] leading-relaxed font-normal"
+            >
+              Partner with Achieva and get a dedicated team that already knows
+              the work — so your IMO can focus on growth, not paperwork.
+            </p>
+          </div>
+
+          <div
+            class="bg-[#24364e]/70 border border-[#334864] p-8 sm:p-10 rounded-2xl shadow-2xl backdrop-blur-xs reveal-up delay-200"
+          >
+            <span
+              class="text-accent font-bold tracking-wider text-xs uppercase block mb-6"
+              >GET IN TOUCH</span
+            >
+            <form
+              id="contact-form"
+              onsubmit="handleFormSubmit(event)"
+              class="space-y-5"
+            >
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label
+                    class="block text-xs font-semibold text-slate-300 mb-1.5"
+                  >
+                    Full Name <span class="text-accent">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    class="w-full px-4 py-3 rounded-lg border border-[#405672] bg-[#33465e]/80 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+                    placeholder="Jane Smith"
+                  />
+                </div>
+                <div>
+                  <label
+                    class="block text-xs font-semibold text-slate-300 mb-1.5"
+                  >
+                    Email Address <span class="text-accent">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    class="w-full px-4 py-3 rounded-lg border border-[#405672] bg-[#33465e]/80 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+                    placeholder="jane@yourimo.com"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5"
+                  >Organization / IMO</label
+                >
+                <input
+                  type="text"
+                  class="w-full px-4 py-3 rounded-lg border border-[#405672] bg-[#33465e]/80 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+                  placeholder="Your organization name"
+                />
+              </div>
+
+              <div>
+                <label
+                  class="block text-xs font-semibold text-slate-300 mb-1.5"
+                >
+                  Message <span class="text-accent">*</span>
+                </label>
+                <textarea
+                  rows="4"
+                  required
+                  class="w-full px-4 py-3 rounded-lg border border-[#405672] bg-[#33465e]/80 text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-accent transition-all"
+                  placeholder="Tell us about your contracting workflow needs..."
+                ></textarea>
+              </div>
+
+              <div class="pt-2">
+                <button
+                  type="submit"
+                  class="inline-flex items-center justify-center px-8 py-3.5 rounded-full font-bold text-[15px] bg-accent text-white hover:bg-accent-hover shadow-md transition-all hover:scale-105"
+                >
+                  Let's Talk!
+                </button>
+              </div>
+
+              <div
+                id="form-success"
+                class="hidden p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-emerald-200 text-sm font-medium text-center"
+              >
+                Thank you! Your message has been sent. We'll be in touch soon.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-primary text-slate-400 py-16 border-t border-[#293d56]">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start gap-12"
+        >
+          <div class="space-y-4 max-w-md">
+            <a href="#hero" class="inline-block">
+              <img
+                src="assets/LOGO.png"
+                alt="AchieVA"
+                class="h-8 md:h-10 w-auto object-contain brightness-0 invert"
+              />
+            </a>
+            <p class="text-slate-300 text-sm leading-relaxed font-normal">
+              Dedicated insurance contracting support for Independent Marketing
+              Organizations.
+            </p>
+            <p class="text-xs text-slate-400 pt-2 font-normal">
+              &copy; 2025 Achieva Virtual Assistants. All rights reserved.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <h4
+              class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4"
+            >
+              QUICK LINKS
+            </h4>
+            <ul class="space-y-2.5 text-sm font-medium">
+              <li>
+                <a
+                  href="#about"
+                  class="text-slate-300 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-slate-300 hover:text-white transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#why"
+                  class="text-slate-300 hover:text-white transition-colors"
+                  >Why Achieva</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  class="text-slate-300 hover:text-white transition-colors"
+                  >Reviews</a
+                >
+              </li>
+              <li>
+                <a
+                  href="pricing.html"
+                  class="text-slate-300 hover:text-white transition-colors"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-slate-300 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      // Mobile Menu Toggle
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-nav-link");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Form Submission Handler
+      function handleFormSubmit(e) {
+        e.preventDefault();
+        const successMsg = document.getElementById("form-success");
+        successMsg.classList.remove("hidden");
+        document.getElementById("contact-form").reset();
+        setTimeout(() => {
+          successMsg.classList.add("hidden");
+        }, 6000);
+      }
+
+      // Scroll & Entrance Reveal Animations
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.1,
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".reveal-up, .reveal-right, .reveal-left")
+        .forEach((el) => {
+          revealObserver.observe(el);
+        });
+
+      // Dynamic Navigation ScrollSpy Active State
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      function updateActiveNav() {
+        const scrollY = window.pageYOffset + 140;
+        sections.forEach((current) => {
+          const sectionHeight = current.offsetHeight;
+          const sectionTop = current.offsetTop;
+          const sectionId = current.getAttribute("id");
+
+          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            navLinks.forEach((link) => {
+              if (link.getAttribute("href") === `#${sectionId}`) {
+                link.classList.add(
+                  "text-[#111827]",
+                  "font-bold",
+                  "border-accent",
+                );
+                link.classList.remove(
+                  "text-slate-600",
+                  "font-medium",
+                  "border-transparent",
+                );
+              } else if (link.getAttribute("href").startsWith("#")) {
+                link.classList.remove(
+                  "text-[#111827]",
+                  "font-bold",
+                  "border-accent",
+                );
+                link.classList.add(
+                  "text-slate-600",
+                  "font-medium",
+                  "border-transparent",
+                );
+              }
+            });
+          }
+        });
+      }
+
+      window.addEventListener("scroll", updateActiveNav);
+      window.addEventListener("load", updateActiveNav);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing | Achieva Virtual Assistants</title>
+    <meta
+      name="description"
+      content="Simple, transparent pricing for IMO insurance contracting support. Choose the team size that fits your volume."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,600&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["DM Sans", "sans-serif"],
+            },
+            colors: {
+              primary: {
+                DEFAULT: "#1b2c42",
+                dark: "#142133",
+                light: "#243750",
+              },
+              accent: {
+                DEFAULT: "#e69a28",
+                hover: "#d48818",
+                light: "#fef7ee",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "DM Sans", sans-serif;
+      }
+
+      /* Smooth, Eased Scroll & Page Load Animations */
+      .reveal-up {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+          opacity 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+
+      .reveal-up.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Progressive Stagger Delays */
+      .delay-100 {
+        transition-delay: 100ms;
+      }
+      .delay-150 {
+        transition-delay: 150ms;
+      }
+      .delay-200 {
+        transition-delay: 200ms;
+      }
+      .delay-300 {
+        transition-delay: 300ms;
+      }
+      .delay-400 {
+        transition-delay: 400ms;
+      }
+      .delay-500 {
+        transition-delay: 500ms;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#f8fafc] text-slate-900 antialiased selection:bg-accent selection:text-white relative overflow-x-hidden"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200 shadow-xs transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex items-center justify-between h-20">
+          <a href="index.html" class="flex items-center shrink-0">
+            <img
+              src="assets/LOGO.png"
+              alt="AchieVA"
+              class="h-8 md:h-10 w-auto object-contain"
+            />
+          </a>
+
+          <nav class="hidden md:flex items-center gap-8 text-[15px]">
+            <a
+              href="index.html#services"
+              class="font-medium text-slate-600 hover:text-slate-900 transition-all pb-1 border-b-2 border-transparent"
+              >Services</a
+            >
+            <a
+              href="index.html#why"
+              class="font-medium text-slate-600 hover:text-slate-900 transition-all pb-1 border-b-2 border-transparent"
+              >Why Achieva</a
+            >
+            <a
+              href="index.html#about"
+              class="font-medium text-slate-600 hover:text-slate-900 transition-all pb-1 border-b-2 border-transparent"
+              >About</a
+            >
+            <a
+              href="index.html#testimonials"
+              class="font-medium text-slate-600 hover:text-slate-900 transition-all pb-1 border-b-2 border-transparent"
+              >Reviews</a
+            >
+            <a
+              href="pricing.html"
+              class="font-bold text-[#111827] pb-1 border-b-2 border-accent"
+              >Pricing</a
+            >
+            <a
+              href="index.html#contact"
+              class="font-medium text-slate-600 hover:text-slate-900 transition-all pb-1 border-b-2 border-transparent"
+              >Contact</a
+            >
+          </nav>
+
+          <div class="hidden md:flex items-center">
+            <a
+              href="index.html#contact"
+              class="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-[14px] font-bold bg-accent text-white hover:bg-accent-hover shadow-xs transition-all hover:scale-105"
+            >
+              Let's Talk
+            </a>
+          </div>
+
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+            aria-label="Toggle Menu"
+          >
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-xl"
+      >
+        <a
+          href="index.html#services"
+          class="block text-base font-medium text-slate-700 hover:text-accent"
+          >Services</a
+        >
+        <a
+          href="index.html#why"
+          class="block text-base font-medium text-slate-700 hover:text-accent"
+          >Why Achieva</a
+        >
+        <a
+          href="index.html#about"
+          class="block text-base font-medium text-slate-700 hover:text-accent"
+          >About</a
+        >
+        <a
+          href="index.html#testimonials"
+          class="block text-base font-medium text-slate-700 hover:text-accent"
+          >Reviews</a
+        >
+        <a href="pricing.html" class="block text-base font-bold text-accent"
+          >Pricing</a
+        >
+        <a
+          href="index.html#contact"
+          class="block text-base font-medium text-slate-700 hover:text-accent"
+          >Contact</a
+        >
+        <div class="pt-2">
+          <a
+            href="index.html#contact"
+            class="block text-center w-full bg-accent text-white py-3 rounded-xl font-bold shadow-md"
+          >
+            Let's Talk
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section
+      class="pt-36 pb-36 bg-primary text-white text-center relative overflow-hidden"
+    >
+      <div class="max-w-4xl mx-auto px-6 lg:px-12 relative z-10">
+        <span
+          class="text-accent font-bold tracking-wider text-xs uppercase block mb-3 reveal-up delay-100"
+        >
+          PRICING
+        </span>
+        <h1
+          class="text-4xl sm:text-5xl lg:text-[56px] font-extrabold tracking-tight mb-4 reveal-up delay-200"
+        >
+          Simple, Transparent Pricing
+        </h1>
+        <p
+          class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto font-normal leading-relaxed reveal-up delay-300"
+        >
+          Choose the team size that fits your contracting volume. Flat monthly
+          rate, no hidden fees, no per-task billing.
+        </p>
+      </div>
+    </section>
+
+    <section class="relative z-20 -mt-20 pb-24">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          <div
+            class="rounded-3xl border border-slate-200 bg-white p-8 sm:p-10 shadow-xl flex flex-col justify-between reveal-up delay-100 hover:shadow-2xl transition-all duration-300"
+          >
+            <div>
+              <span
+                class="text-accent font-bold text-xs uppercase tracking-wider block mb-4"
+              >
+                STARTER
+              </span>
+              <div class="flex items-baseline gap-2 mb-2">
+                <span class="text-4xl sm:text-5xl font-extrabold text-[#111827]"
+                  >$3,500</span
+                >
+                <span class="text-slate-500 text-sm font-medium"
+                  >per month</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-2 text-slate-600 text-sm font-semibold mb-6"
+              >
+                <i data-lucide="users" class="w-4 h-4 text-slate-500"></i>
+                <span>3 specialists</span>
+              </div>
+
+              <p class="text-[14px] text-slate-600 leading-relaxed mb-6">
+                A focused team to handle your core contracting needs — ideal for
+                growing IMOs building out their operations.
+              </p>
+
+              <div
+                class="p-4 rounded-xl bg-slate-100/80 text-[13px] text-slate-600 leading-relaxed mb-8"
+              >
+                <strong class="text-slate-900 font-bold"
+                  >Recommended for:</strong
+                >
+                Best for IMOs processing up to 30 contracts per day with up to
+                150 active agents.
+              </div>
+
+              <ul
+                class="space-y-3 text-[14px] text-slate-700 font-medium mb-10"
+              >
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-amber-50 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>3 dedicated contracting specialists</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-amber-50 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Agent onboarding & contract request review</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-amber-50 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Contract processing via SureLC</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-amber-50 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Writing number maintenance</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-amber-50 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Monthly issue paid reports</span>
+                </li>
+              </ul>
+            </div>
+
+            <a
+              href="index.html#contact"
+              class="w-full py-3.5 rounded-full font-bold text-[15px] bg-[#18293d] text-white hover:bg-slate-800 transition-all text-center inline-flex items-center justify-center gap-2 shadow-sm hover:scale-105"
+            >
+              Get Started <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div
+            class="rounded-3xl border-2 border-accent bg-[#18293d] p-8 sm:p-10 shadow-2xl flex flex-col justify-between relative text-white reveal-up delay-200 hover:shadow-[0_25px_60px_-15px_rgba(230,154,40,0.3)] transition-all duration-300"
+          >
+            <div
+              class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-accent text-white px-4 py-1 rounded-full text-xs font-bold shadow-md flex items-center gap-1.5 whitespace-nowrap"
+            >
+              <span>★</span> Most Popular
+            </div>
+
+            <div>
+              <span
+                class="text-accent font-bold text-xs uppercase tracking-wider block mb-4 mt-2"
+              >
+                GROWTH
+              </span>
+              <div class="flex items-baseline gap-2 mb-2">
+                <span class="text-4xl sm:text-5xl font-extrabold text-white"
+                  >$5,500</span
+                >
+                <span class="text-slate-400 text-sm font-medium"
+                  >per month</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-2 text-accent text-sm font-semibold mb-6"
+              >
+                <i data-lucide="users" class="w-4 h-4"></i>
+                <span>5 specialists</span>
+              </div>
+
+              <p class="text-[14px] text-slate-300 leading-relaxed mb-6">
+                A well-rounded team for mid-size IMOs that need consistent
+                throughput and faster issue resolution.
+              </p>
+
+              <div
+                class="p-4 rounded-xl bg-[#243750] text-[13px] text-slate-300 leading-relaxed mb-8 border border-slate-700/50"
+              >
+                <strong class="text-white font-bold">Recommended for:</strong>
+                Best for IMOs processing 30–60 contracts per day with 150–500
+                active agents.
+              </div>
+
+              <ul
+                class="space-y-3 text-[14px] text-slate-200 font-medium mb-10"
+              >
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-accent/20 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>5 dedicated contracting specialists</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-accent/20 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Agent onboarding & contract request review</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-accent/20 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Contract processing via SureLC</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-accent/20 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Contract issue resolution & carrier coordination</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-accent/20 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Writing number maintenance & record updates</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-accent/20 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Monthly issue paid reports</span>
+                </li>
+              </ul>
+            </div>
+
+            <a
+              href="index.html#contact"
+              class="w-full py-3.5 rounded-full font-bold text-[15px] bg-accent text-white hover:bg-accent-hover transition-all text-center inline-flex items-center justify-center gap-2 shadow-lg hover:scale-105"
+            >
+              Get Started <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <div
+            class="rounded-3xl border border-slate-200 bg-white p-8 sm:p-10 shadow-xl flex flex-col justify-between reveal-up delay-300 hover:shadow-2xl transition-all duration-300"
+          >
+            <div>
+              <span
+                class="text-accent font-bold text-xs uppercase tracking-wider block mb-4"
+              >
+                ENTERPRISE
+              </span>
+              <div class="flex items-baseline gap-2 mb-2">
+                <span class="text-4xl sm:text-5xl font-extrabold text-[#111827]"
+                  >$7,500</span
+                >
+                <span class="text-slate-500 text-sm font-medium"
+                  >per month</span
+                >
+              </div>
+              <div
+                class="flex items-center gap-2 text-slate-600 text-sm font-semibold mb-6"
+              >
+                <i data-lucide="users" class="w-4 h-4 text-slate-500"></i>
+                <span>7 specialists</span>
+              </div>
+
+              <p class="text-[14px] text-slate-600 leading-relaxed mb-6">
+                Full-capacity support for high-volume IMOs that need a complete
+                contracting operations team.
+              </p>
+
+              <div
+                class="p-4 rounded-xl bg-slate-100/80 text-[13px] text-slate-600 leading-relaxed mb-8"
+              >
+                <strong class="text-slate-900 font-bold"
+                  >Recommended for:</strong
+                >
+                Best for IMOs processing 60+ contracts per day with 500+ active
+                agents.
+              </div>
+
+              <ul
+                class="space-y-3 text-[14px] text-slate-700 font-medium mb-10"
+              >
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-amber-50 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>7 dedicated contracting specialists</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-amber-50 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Agent onboarding & contract request review</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-amber-50 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Contract processing via SureLC</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-amber-50 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Contract issue resolution & carrier coordination</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-amber-50 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Writing number maintenance & record updates</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-amber-50 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Monthly issue paid reports</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span
+                    class="w-5 h-5 rounded-full bg-amber-50 text-accent flex items-center justify-center shrink-0 mt-0.5"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                  </span>
+                  <span>Priority turnaround & dedicated point of contact</span>
+                </li>
+              </ul>
+            </div>
+
+            <a
+              href="index.html#contact"
+              class="w-full py-3.5 rounded-full font-bold text-[15px] bg-[#18293d] text-white hover:bg-slate-800 transition-all text-center inline-flex items-center justify-center gap-2 shadow-sm hover:scale-105"
+            >
+              Get Started <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-white border-t border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+          <div class="flex flex-col items-center reveal-up delay-100">
+            <div
+              class="w-12 h-12 rounded-full bg-amber-50 text-accent flex items-center justify-center mb-5 shadow-2xs"
+            >
+              <i data-lucide="check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#111827] mb-2">
+              No hidden fees
+            </h3>
+            <p
+              class="text-[14px] text-slate-600 max-w-xs leading-relaxed font-normal"
+            >
+              One flat monthly rate covers your entire dedicated team. No
+              per-contract charges, no surprise add-ons.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center reveal-up delay-200">
+            <div
+              class="w-12 h-12 rounded-full bg-amber-50 text-accent flex items-center justify-center mb-5 shadow-2xs"
+            >
+              <i data-lucide="check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#111827] mb-2">
+              Dedicated specialists
+            </h3>
+            <p
+              class="text-[14px] text-slate-600 max-w-xs leading-relaxed font-normal"
+            >
+              Your team learns your IMO's workflow and carrier relationships —
+              not a shared pool of generalists.
+            </p>
+          </div>
+
+          <div class="flex flex-col items-center reveal-up delay-300">
+            <div
+              class="w-12 h-12 rounded-full bg-amber-50 text-accent flex items-center justify-center mb-5 shadow-2xs"
+            >
+              <i data-lucide="check" class="w-6 h-6"></i>
+            </div>
+            <h3 class="text-lg font-bold text-[#111827] mb-2">
+              Ready to scale
+            </h3>
+            <p
+              class="text-[14px] text-slate-600 max-w-xs leading-relaxed font-normal"
+            >
+              As your agent count grows, your contracting operations grow with
+              you without adding internal headcount.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-20 bg-primary text-white text-center border-t border-slate-800"
+    >
+      <div class="max-w-4xl mx-auto px-6 lg:px-12">
+        <h2
+          class="text-3xl sm:text-4xl font-extrabold text-white mb-3 reveal-up delay-100"
+        >
+          Not sure which plan is right for you?
+        </h2>
+        <p
+          class="text-slate-300 text-[15px] sm:text-[16px] mb-8 font-normal reveal-up delay-200"
+        >
+          Reach out and we'll help you find the right fit for your IMO's
+          contracting volume.
+        </p>
+        <div class="reveal-up delay-300">
+          <a
+            href="index.html#contact"
+            class="inline-flex items-center justify-center px-8 py-3.5 rounded-full font-bold text-[15px] bg-accent text-white hover:bg-accent-hover shadow-md transition-all hover:scale-105 gap-2"
+          >
+            Let's Talk <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-primary text-slate-400 py-16 border-t border-[#293d56]">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start gap-12"
+        >
+          <div class="space-y-4 max-w-md">
+            <a href="index.html" class="inline-block">
+              <img
+                src="assets/LOGO.png"
+                alt="AchieVA"
+                class="h-8 md:h-10 w-auto object-contain brightness-0 invert"
+              />
+            </a>
+            <p class="text-slate-300 text-sm leading-relaxed font-normal">
+              Dedicated insurance contracting support for Independent Marketing
+              Organizations.
+            </p>
+            <p class="text-xs text-slate-400 pt-2 font-normal">
+              &copy; 2025 Achieva Virtual Assistants. All rights reserved.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <h4
+              class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4"
+            >
+              QUICK LINKS
+            </h4>
+            <ul class="space-y-2.5 text-sm font-medium">
+              <li>
+                <a
+                  href="index.html#services"
+                  class="text-slate-300 hover:text-white transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#why"
+                  class="text-slate-300 hover:text-white transition-colors"
+                  >Why Achieva</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#about"
+                  class="text-slate-300 hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="pricing.html"
+                  class="text-white font-bold transition-colors"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="index.html#contact"
+                  class="text-slate-300 hover:text-white transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      lucide.createIcons();
+
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // IntersectionObserver for Smooth Eased Reveal Animations
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.12,
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".reveal-up").forEach((el) => {
+        revealObserver.observe(el);
+      });
+    </script>
+  </body>
+</html>
