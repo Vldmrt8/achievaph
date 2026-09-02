@@ -56,6 +56,64 @@
       h6 {
         font-family: "DM Sans", sans-serif;
       }
+
+      html {
+        overflow-x: clip;
+      }
+
+      /* Smooth Scroll & Entrance Animations */
+      .reveal-up {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+          opacity 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.15s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+      .reveal-up.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal-right {
+        opacity: 0;
+        transform: translateX(60px);
+        transition:
+          opacity 1.25s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.25s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+      .reveal-right.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .reveal-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition:
+          opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+      .reveal-left.active {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .delay-100 {
+        transition-delay: 100ms;
+      }
+      .delay-150 {
+        transition-delay: 150ms;
+      }
+      .delay-200 {
+        transition-delay: 200ms;
+      }
+      .delay-300 {
+        transition-delay: 300ms;
+      }
+      .delay-400 {
+        transition-delay: 400ms;
+      }
     </style>
   </head>
   <body
@@ -98,7 +156,7 @@
               >
               <a
                 href="contact.html"
-                class="font-medium text-slate-600 hover:text-slate-900 transition-colors"
+                class="text-slate-900 font-bold border-b-2 border-accent pb-0.5"
                 >Contact</a
               >
             </nav>
@@ -148,7 +206,7 @@
           >
           <a
             href="contact.html"
-            class="block text-base font-medium text-slate-700 hover:text-accent mobile-nav-link"
+            class="block text-base font-bold text-accent mobile-nav-link"
             >Contact</a
           >
           <div class="pt-2">
@@ -169,17 +227,17 @@
       <div class="max-w-7xl mx-auto px-6 lg:px-12">
         <div class="max-w-3xl">
           <span
-            class="text-accent font-bold tracking-wider text-xs uppercase block mb-3"
+            class="text-accent font-bold tracking-wider text-xs uppercase block mb-3 reveal-up delay-100"
           >
             GET IN TOUCH
           </span>
           <h1
-            class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.1] mb-5"
+            class="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.1] mb-5 reveal-up delay-200"
           >
             Let's talk about your contracting needs
           </h1>
           <p
-            class="text-slate-300 text-base sm:text-lg leading-relaxed font-normal"
+            class="text-slate-300 text-base sm:text-lg leading-relaxed font-normal reveal-up delay-300"
           >
             Whether you're an IMO looking to streamline agent onboarding or need
             ongoing contract processing support, we're ready to help.
@@ -194,7 +252,7 @@
           class="grid grid-cols-1 lg:grid-cols-[45%_55%] gap-12 lg:gap-16 items-start"
         >
           <div class="space-y-8 max-w-lg">
-            <div>
+            <div class="reveal-left delay-100">
               <h2
                 class="text-3xl sm:text-4xl font-extrabold text-[#111827] tracking-tight mb-4"
               >
@@ -208,8 +266,7 @@
             </div>
 
             <div class="space-y-6 pt-2">
-              <!-- Response Time -->
-              <div class="flex items-center gap-4">
+              <div class="flex items-center gap-4 reveal-left delay-200">
                 <div
                   class="w-12 h-12 rounded-xl bg-[#18293d] flex items-center justify-center shrink-0 shadow-sm"
                 >
@@ -225,8 +282,7 @@
                 </div>
               </div>
 
-              <!-- Serving -->
-              <div class="flex items-center gap-4">
+              <div class="flex items-center gap-4 reveal-left delay-300">
                 <div
                   class="w-12 h-12 rounded-xl bg-[#18293d] flex items-center justify-center shrink-0 shadow-sm"
                 >
@@ -243,7 +299,7 @@
           </div>
 
           <div
-            class="bg-[#1e2f47] border border-[#2e4463] p-8 sm:p-10 rounded-2xl shadow-xl"
+            class="bg-[#1e2f47] border border-[#2e4463] p-8 sm:p-10 rounded-2xl shadow-xl reveal-right delay-200"
           >
             <span
               class="text-accent font-bold tracking-wider text-xs uppercase block mb-6"
@@ -261,7 +317,6 @@
               class="space-y-5"
             >
               <input type="hidden" name="form-name" value="contact" />
-
               <p class="hidden">
                 <label>Don’t fill this out: <input name="bot-field" /></label>
               </p>
@@ -348,7 +403,8 @@
                 id="form-error"
                 class="hidden p-4 rounded-xl bg-rose-950/90 border border-rose-500/40 text-rose-200 text-sm font-medium text-center"
               >
-                Something went wrong submitting your form. Please try again.
+                Something went wrong submitting your form. Please try again or
+                email us directly.
               </div>
             </form>
           </div>
@@ -429,6 +485,7 @@
     <script>
       lucide.createIcons();
 
+      // Mobile Menu Toggle with Slide Animation
       const menuBtn = document.getElementById("mobile-menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
       const mobileLinks = document.querySelectorAll(".mobile-nav-link");
@@ -458,6 +515,7 @@
         });
       }
 
+      // AJAX Form Submission for Netlify
       function handleFormSubmit(e) {
         e.preventDefault();
         const form = e.target;
@@ -472,7 +530,6 @@
 
         const formData = new FormData(form);
 
-        // Submits to the current page path (/contact.html)
         fetch(window.location.pathname, {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -494,6 +551,28 @@
             submitBtn.innerText = "Let's Talk!";
           });
       }
+
+      // Scroll & Entrance Reveal Animations Observer
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.1,
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".reveal-up, .reveal-right, .reveal-left")
+        .forEach((el) => {
+          revealObserver.observe(el);
+        });
     </script>
   </body>
 </html>
