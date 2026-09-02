@@ -148,11 +148,61 @@
 
           <button
             id="mobile-menu-btn"
-            class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors"
+            class="md:hidden flex flex-col justify-center items-center w-10 h-10 p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors gap-1.5 focus:outline-none"
             aria-label="Toggle Menu"
+            aria-expanded="false"
           >
-            <i data-lucide="menu" class="w-6 h-6"></i>
+            <span
+              class="hamburger-line line-1 block w-5 h-0.5 bg-slate-800 rounded-full origin-center"
+            ></span>
+            <span
+              class="hamburger-line line-2 block w-5 h-0.5 bg-slate-800 rounded-full origin-center"
+            ></span>
+            <span
+              class="hamburger-line line-3 block w-5 h-0.5 bg-slate-800 rounded-full origin-center"
+            ></span>
           </button>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="md:hidden bg-white border-b border-slate-200 overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0"
+      >
+        <div class="px-6 py-6 space-y-4 shadow-xl">
+          <a
+            href="index.html#services"
+            class="block text-base font-medium text-slate-700 hover:text-accent mobile-nav-link"
+            >Services</a
+          >
+          <a
+            href="index.html#why"
+            class="block text-base font-medium text-slate-700 hover:text-accent mobile-nav-link"
+            >Why Achieva</a
+          >
+          <a
+            href="index.html#about"
+            class="block text-base font-medium text-slate-700 hover:text-accent mobile-nav-link"
+            >About</a
+          >
+          <a
+            href="pricing.html"
+            class="block text-base font-medium text-slate-700 hover:text-accent mobile-nav-link"
+            >Pricing</a
+          >
+          <a
+            href="contact.html"
+            class="block text-base font-medium text-slate-700 hover:text-accent mobile-nav-link"
+            >Contact</a
+          >
+          <div class="pt-2">
+            <a
+              href="contact.html"
+              class="block text-center w-full bg-accent text-white py-3 rounded-xl font-bold shadow-md mobile-nav-link"
+            >
+              Let's Talk
+            </a>
+          </div>
         </div>
       </div>
     </header>
@@ -567,7 +617,7 @@
         </p>
         <div class="reveal-up delay-300">
           <a
-            href="index.html#contact"
+            href="contact.html"
             class="inline-flex items-center justify-center px-8 py-3.5 rounded-full font-bold text-[15px] bg-accent text-white hover:bg-accent-hover shadow-md transition-all hover:scale-105 gap-2"
           >
             Let's Talk <i data-lucide="arrow-right" class="w-4 h-4"></i>
@@ -635,7 +685,7 @@
               </li>
               <li>
                 <a
-                  href="index.html#contact"
+                  href="contact.html"
                   class="text-slate-300 hover:text-white transition-colors"
                   >Contact</a
                 >
@@ -651,10 +701,32 @@
 
       const menuBtn = document.getElementById("mobile-menu-btn");
       const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-nav-link");
 
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
+      if (menuBtn && mobileMenu) {
+        function closeMenu() {
+          mobileMenu.classList.remove("max-h-[500px]", "opacity-100");
+          mobileMenu.classList.add("max-h-0", "opacity-0");
+        }
+
+        function openMenu() {
+          mobileMenu.classList.remove("max-h-0", "opacity-0");
+          mobileMenu.classList.add("max-h-[500px]", "opacity-100");
+        }
+
+        menuBtn.addEventListener("click", () => {
+          const isClosed = mobileMenu.classList.contains("max-h-0");
+          if (isClosed) {
+            openMenu();
+          } else {
+            closeMenu();
+          }
+        });
+
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+      }
 
       // IntersectionObserver for Smooth Eased Reveal Animations
       const observerOptions = {
