@@ -311,15 +311,36 @@
               id="contact-form"
               name="contact"
               method="POST"
-              data-netlify="true"
-              netlify-honeypot="bot-field"
+              action="https://api.web3forms.com/submit"
               onsubmit="handleFormSubmit(event)"
               class="space-y-5"
             >
-              <input type="hidden" name="form-name" value="contact" />
-              <p class="hidden">
-                <label>Don’t fill this out: <input name="bot-field" /></label>
-              </p>
+              <!-- Web3Forms Access Key -->
+              <input
+                type="hidden"
+                name="access_key"
+                value="ae4b8489-51b5-40a8-8aca-ae88589d3ca9"
+              />
+
+              <!-- Notification Customizations -->
+              <input
+                type="hidden"
+                name="subject"
+                value="New Inquiry from Achieva Website"
+              />
+              <input
+                type="hidden"
+                name="from_name"
+                value="AchieVA Website System"
+              />
+
+              <!-- Anti-Spam Honeypot Field -->
+              <input
+                type="checkbox"
+                name="botcheck"
+                class="hidden"
+                style="display: none"
+              />
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
@@ -515,7 +536,7 @@
         });
       }
 
-      // AJAX Form Submission for Netlify
+      // AJAX Form Submission for Web3Forms
       function handleFormSubmit(e) {
         e.preventDefault();
         const form = e.target;
@@ -529,21 +550,28 @@
         errorMsg.classList.add("hidden");
 
         const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
 
-        fetch(window.location.pathname, {
+        fetch("https://api.web3forms.com/submit", {
           method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams(formData).toString(),
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: json,
         })
-          .then((res) => {
-            if (res.ok) {
+          .then(async (response) => {
+            const result = await response.json();
+            if (response.status === 200 && result.success) {
               successMsg.classList.remove("hidden");
               form.reset();
             } else {
-              throw new Error("Form submission error");
+              throw new Error(result.message || "Form submission error");
             }
           })
           .catch((err) => {
+            console.error(err);
             errorMsg.classList.remove("hidden");
           })
           .finally(() => {
